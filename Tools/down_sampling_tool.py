@@ -1,31 +1,54 @@
-import cv2
 import os
+import cv2
 
-def process_lr_folder_os():
-    input_dir = "/LR_ground_truth"
-    output_dir = "/LR"
-    
-    # Ensure output folder exists
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+# -------------------------------
+# Folder paths
+# -------------------------------
+input_dir = "../HR_ground_truth"
+output_dir = "../LR"
 
-    # List all files in the directory
-    for filename in os.listdir(input_dir):
-        if filename.endswith(".png") or filename.endswith(".jpg"):
-            # Combine folder path and filename
-            full_input_path = os.path.join(input_dir, filename)
-            
-            img = cv2.imread(full_input_path, cv2.IMREAD_GRAYSCALE)
-            if img is None: 
-                print("This image Not found : ",full_input_path)
-                continue
+# Create LR folder if it doesn't exist
+os.makedirs(output_dir, exist_ok=True)
 
-            #cv2.resize expects (width, height)
-            img_scaled = cv2.resize(img, (60, 80), interpolation=cv2.INTER_AREA)
+# Supported image extensions
+valid_extensions = (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff")
 
-            full_output_path = os.path.join(output_dir, filename)
-            cv2.imwrite(full_output_path, img_scaled)
-            print(f"Processed: {filename}")
+# Check input folder
+if not os.path.isdir(input_dir):
+    print(f"Input folder not found: {os.path.abspath(input_dir)}")
+    exit()
 
-# Run the function
-process_lr_folder_os()
+# Process every image
+for filename in os.listdir(input_dir):
+
+    if not filename.lower().endswith(valid_extensions):
+        continue
+
+    input_path = os.path.join(input_dir, filename)
+
+    # Read image in grayscale
+    image = cv2.imread(input_path, cv2.IMREAD_GRAYSCALE)
+
+    if image is None:
+        print(f"Could not read {filename}")
+        continue
+
+    # Resize image (width, height)
+    resized = cv2.resize(image, (80, 60), interpolation=cv2.INTER_AREA)
+
+    # Separate filename and extension
+    name, ext = os.path.splitext(filename)
+
+    # Remove "_T" from the end of the filename
+    if name.endswith("_T"):
+        name = name[:-2]
+
+    output_filename = name + ext
+    output_path = os.path.join(output_dir, output_filename)
+
+    # Save resized image
+    cv2.imwrite(output_path, resized)
+
+    print(f"Saved: {output_filename}")
+
+print("\nAll images processed successfully.")

@@ -269,6 +269,20 @@ and saved as an 8-bit grayscale PNG.
 
 ## 9. Troubleshooting
 
+- **`ImportError: libGL.so.1: cannot open shared object file`** (common in
+  Codespaces / Docker / headless Linux servers) → this happens because the
+  standard `opencv-python` package pulls in GUI libraries (`libGL`) that
+  headless containers don't have installed. This project's
+  `requirements.txt` now installs **`opencv-python-headless`** instead,
+  which has no GUI dependency and works identically for everything this
+  pipeline needs (reading, resizing, and writing images). Fix:
+  ```bash
+  pip uninstall opencv-python opencv-python-contrib-python -y   # remove the GUI build if present
+  pip install -r requirements.txt                                # installs opencv-python-headless
+  ```
+  (If you'd rather keep the full `opencv-python` build for some other
+  reason, you can instead install the missing system library:
+  `sudo apt-get update && sudo apt-get install -y libgl1`.)
 - **"No matching LR/RGB pairs found"** → check that your filenames in `LR/`
   and `RGB/` end in the same number (e.g. `thermal_xl7.png` and
   `guide_xgb7.jpg` — both end in `7`, so they will still be paired

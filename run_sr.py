@@ -15,7 +15,7 @@ It automatically:
   1. Scans the `LR/`  folder for low-resolution thermal images  (xl1, xl2, ...)
   2. Scans the `RGB/` folder for the matching RGB guide images  (xgb1, xgb2, ...)
   3. Pairs them up by their trailing number (xl3 <-> xgb3, etc.)
-  4. Runs each pair through the pretrained SwinFuSR model (weights/robust03.pth)
+  4. Runs each pair through the pretrained SwinFuSR model (weights/robust0x.pth) x means the verison we use
   5. Saves the predicted high-resolution thermal image to `PHR/` as xp<N>.png
 
 See README.md for full details on accepted image formats/ranges.
@@ -38,7 +38,7 @@ from model.imresize import imresize_np
 
 # --------------------------------------------------------------------------------
 # Fixed architecture configuration -- this MUST match the pretrained checkpoint
-# (weights/robust03.pth). These values were verified against the checkpoint's
+# (weights/robust0x.pth). These values were verified against the checkpoint's
 # tensor shapes and against options/test_swinFuSR.json in the original repo.
 # --------------------------------------------------------------------------------
 MODEL_CONFIG = dict(
@@ -58,13 +58,14 @@ MODEL_CONFIG = dict(
     img_range=1.0,
     upsampler='',
     resi_connection='1conv',
+    weights = 'robust05'
 )
 
 SCALE_FACTOR = 8         # actual super-resolution factor (x8), applied via bicubic
                           # pre-upsampling of the LR thermal image before the network,
                           # exactly as done in the original data/dataset_SR_guided.py
 
-DEFAULT_WEIGHTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'weights', 'robust03.pth')
+DEFAULT_WEIGHTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'weights', MODEL_CONFIG['weights'])
 DEFAULT_LR_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'LR')
 DEFAULT_RGB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'RGB')
 DEFAULT_PHR_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'PHR')
@@ -211,7 +212,7 @@ def main():
     parser.add_argument('--lr_dir', type=str, default=DEFAULT_LR_DIR, help='Folder with LR thermal images (xl1, xl2, ...)')
     parser.add_argument('--rgb_dir', type=str, default=DEFAULT_RGB_DIR, help='Folder with RGB guide images (xgb1, xgb2, ...)')
     parser.add_argument('--out_dir', type=str, default=DEFAULT_PHR_DIR, help='Output folder for predicted HR thermal images (xp1, xp2, ...)')
-    parser.add_argument('--weights', type=str, default=DEFAULT_WEIGHTS, help='Path to pretrained weights (robust03.pth)')
+    parser.add_argument('--weights', type=str, default=DEFAULT_WEIGHTS, help='Path to pretrained weights (%s)' %MODEL_CONFIG['weights'])
     parser.add_argument('--scale', type=int, default=SCALE_FACTOR, help='Super-resolution factor (default: 8, matches the pretrained model)')
     args = parser.parse_args()
 

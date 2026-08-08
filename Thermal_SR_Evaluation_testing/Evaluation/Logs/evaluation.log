@@ -1,0 +1,35 @@
+2026-08-08 04:10:02 | INFO     | ==============================================================================
+2026-08-08 04:10:02 | INFO     | Evaluation Started
+2026-08-08 04:10:02 | INFO     | Device selected for torch-based metrics: cpu
+2026-08-08 04:10:02 | INFO     | ==============================================================================
+2026-08-08 04:10:02 | INFO     | Images Found: 3 candidate sample(s) in '../LR'.
+2026-08-08 04:10:02 | INFO     | Starting dataset verification for 3 candidate sample(s).
+2026-08-08 04:10:03 | INFO     | Sample 1: verification passed.
+2026-08-08 04:10:03 | INFO     | Sample 2: verification passed.
+2026-08-08 04:10:03 | INFO     | Sample 3: verification passed.
+2026-08-08 04:10:03 | INFO     | Dataset verification complete. 3 / 3 sample(s) valid.
+2026-08-08 04:10:03 | INFO     | Images Skipped: 0
+2026-08-08 04:10:03 | INFO     | Current Image: sample_1
+2026-08-08 04:10:03 | INFO     | Metric Calculation: computing metrics for sample_1.
+2026-08-08 04:10:07 | INFO     | LPIPS (AlexNet backbone) initialized successfully.
+2026-08-08 04:10:08 | INFO     | Current Image: sample_2
+2026-08-08 04:10:08 | INFO     | Metric Calculation: computing metrics for sample_2.
+2026-08-08 04:10:09 | INFO     | Current Image: sample_3
+2026-08-08 04:10:09 | INFO     | Metric Calculation: computing metrics for sample_3.
+2026-08-08 04:10:09 | INFO     | Image Metrics CSV saved: Evaluation/CSV/image_metrics.csv
+2026-08-08 04:10:09 | INFO     | Image Metrics Excel file saved: Evaluation/Excel/image_metrics.xlsx
+2026-08-08 04:10:09 | INFO     | Summary Statistics CSV saved: Evaluation/CSV/summary_statistics.csv
+2026-08-08 04:10:09 | INFO     | Summary Statistics Excel file saved: Evaluation/Excel/summary_statistics.xlsx
+2026-08-08 04:10:09 | INFO     | Ranking complete. Selected 1 best sample(s) and 1 worst sample(s) (primary key: lowest RMSE, secondary key: highest SSIM).
+2026-08-08 04:10:09 | INFO     | Exported sample 1 (rank 1) to Best_Samples.
+2026-08-08 04:10:09 | INFO     | Exported sample 3 (rank 1) to Worst_Samples.
+2026-08-08 04:10:10 | INFO     | Slice analysis completed for worst sample 3.
+2026-08-08 04:10:10 | INFO     | Slice Metrics CSV saved: Evaluation/CSV/slice_metrics.csv
+2026-08-08 04:10:10 | INFO     | Slice Metrics Excel file saved: Evaluation/Excel/slice_metrics.xlsx
+2026-08-08 04:10:10 | INFO     | Histogram saved: Evaluation/Graphs/PSNR_histogram.png
+2026-08-08 04:10:10 | INFO     | Histogram saved: Evaluation/Graphs/SSIM_histogram.png
+2026-08-08 04:10:10 | INFO     | Histogram saved: Evaluation/Graphs/RMSE_histogram.png
+2026-08-08 04:10:10 | INFO     | Histogram saved: Evaluation/Graphs/MAE_histogram.png
+2026-08-08 04:10:10 | INFO     | Graphs Saved
+2026-08-08 04:10:10 | INFO     | Evaluation Completed
+2026-08-08 04:10:10 | INFO     | ==============================================================================

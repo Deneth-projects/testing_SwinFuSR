@@ -1,8 +1,8 @@
-numpy>=1.23
-opencv-python>=4.7.0
+numpy
+opencv-python
 pandas
 matplotlib
-torch>=2.0.0
+torch
 torchvision
 torchmetrics
 lpips

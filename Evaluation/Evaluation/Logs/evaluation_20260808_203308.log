@@ -1,0 +1,50 @@
+2026-08-08 20:33:08 | INFO     | ==============================================================================
+2026-08-08 20:33:08 | INFO     | THERMAL SUPER-RESOLUTION EVALUATION
+2026-08-08 20:33:08 | INFO     | ==============================================================================
+2026-08-08 20:33:08 | INFO     | HR Ground Truth Folder : ../HR_ground_truth
+2026-08-08 20:33:08 | INFO     | Predicted Folder       : ../PHR
+2026-08-08 20:33:08 | INFO     | Output Folder          : /workspaces/testing_SwinFuSR/Evaluation/Evaluation
+2026-08-08 20:33:08 | INFO     | 
+2026-08-08 20:33:08 | INFO     | Pairs discovered (matched GT + Predicted): 7
+2026-08-08 20:33:08 | INFO     | Evaluating pair1 (GT: xl1_T.jpeg, Pred: xp1.png) ...
+2026-08-08 20:33:57 | INFO     |   LPIPS OK
+2026-08-08 20:33:57 | INFO     | Evaluating pair2 (GT: xl2_T.jpeg, Pred: xp2.png) ...
+2026-08-08 20:33:59 | INFO     | Evaluating pair3 (GT: xl3_T.jpeg, Pred: xp3.png) ...
+2026-08-08 20:34:00 | INFO     | Evaluating pair4 (GT: xl4_T.jpeg, Pred: xp4.png) ...
+2026-08-08 20:34:02 | INFO     | Evaluating pair5 (GT: xl5_T.jpeg, Pred: xp5.png) ...
+2026-08-08 20:34:04 | INFO     | Evaluating pair6 (GT: xl6_T.jpeg, Pred: xp6.png) ...
+2026-08-08 20:34:05 | INFO     | Evaluating pair7 (GT: xl7_T.jpeg, Pred: xp7.png) ...
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | ==============================================================================
+2026-08-08 20:34:08 | INFO     | EVALUATION COMPLETE
+2026-08-08 20:34:08 | INFO     | ==============================================================================
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | Pairs evaluated         : 7 / 7
+2026-08-08 20:34:08 | INFO     | Pairs skipped           : 0
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | Mean PSNR               : 30.1527 dB
+2026-08-08 20:34:08 | INFO     | Mean SSIM               : 0.9007
+2026-08-08 20:34:08 | INFO     | Mean MS-SSIM            : 0.9555
+2026-08-08 20:34:08 | INFO     | Mean LPIPS              : 0.3225
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | Mean MAE                : 0.0169
+2026-08-08 20:34:08 | INFO     | Mean MAE (%)            : 1.6896%
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | Mean RMSE               : 0.0424
+2026-08-08 20:34:08 | INFO     | Mean RMSE (%)           : 4.2445%
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | Mean Max Error          : 0.4308
+2026-08-08 20:34:08 | INFO     | Mean Max Error (%)      : 43.0812%
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | Whole Dataset Max Error     : 0.5961
+2026-08-08 20:34:08 | INFO     | Whole Dataset Max Error (%) : 59.6078%
+2026-08-08 20:34:08 | INFO     | 
+2026-08-08 20:34:08 | INFO     | Output folder           : /workspaces/testing_SwinFuSR/Evaluation/Evaluation
+2026-08-08 20:34:08 | INFO     |   Image CSV              : /workspaces/testing_SwinFuSR/Evaluation/Evaluation/CSV/image_metrics.csv
+2026-08-08 20:34:08 | INFO     |   Summary CSV            : /workspaces/testing_SwinFuSR/Evaluation/Evaluation/CSV/summary_statistics.csv
+2026-08-08 20:34:08 | INFO     |   Excel report           : /workspaces/testing_SwinFuSR/Evaluation/Evaluation/Excel/evaluation_report.xlsx
+2026-08-08 20:34:08 | INFO     |   Summary Excel          : /workspaces/testing_SwinFuSR/Evaluation/Evaluation/Excel/summary_statistics.xlsx
+2026-08-08 20:34:08 | INFO     |   Graphs                 : /workspaces/testing_SwinFuSR/Evaluation/Evaluation/Graphs
+2026-08-08 20:34:08 | INFO     |   Error maps             : /workspaces/testing_SwinFuSR/Evaluation/Evaluation/Error_Maps
+2026-08-08 20:34:08 | INFO     |   Log file               : /workspaces/testing_SwinFuSR/Evaluation/Evaluation/Logs/evaluation_20260808_203308.log
+2026-08-08 20:34:08 | INFO     | ==============================================================================
